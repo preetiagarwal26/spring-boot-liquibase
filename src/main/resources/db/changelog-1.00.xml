@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0" author="Preeti">
+        <tagDatabase  tag="1.0"/>
+    </changeSet>
+
+    <changeSet id="1" author="Preeti">
+        <sql>INSERT INTO TBL_USER(ID, USER_ID, FIRST_NAME,LAST_NAME, EMAIL, ACTIVE, CREATE_TSTAMP, CREATE_USER_ID, DISABLE_TSTAMP) VALUES
+            (110, '10060','Skandh','Gupta', 'skandh@gupta.com', 'Y', CURRENT_TIMESTAMP-25, '10005', CURRENT_TIMESTAMP-10);</sql>
+        <rollback>
+            <sql>DELETE FROM TBL_USER WHERE ID = 110;</sql>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
